@@ -1,0 +1,194 @@
+body {
+    background-color: #1B2631 !important;
+    color: #ECF0F1 !important;
+    font-family: 'Roboto', sans-serif; 
+}
+.navbar {
+    background-color: #154360 !important;
+    border-radius: 12px;
+    margin: 10px auto;
+    padding: 12px 20px;
+    max-width: 95%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar h1 {
+    color: #ECF0F1 !important;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.nav-item .btn-outline-light {
+    border-color: #ECF0F1 !important;
+    color: #ECF0F1 !important;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.nav-item .btn-outline-light:hover {
+    background-color: #ECF0F1 !important;
+    color: #1B2631 !important;
+    border-color: #ECF0F1 !important;
+}
+
+.profile-img {
+    width: 80%;
+    max-width: 250px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(41, 128, 185, 0.4) !important;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: #ECF0F1 !important;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+p.lead {
+    font-size: 18px;
+    color: #ECF0F1 !important;
+    padding-left: 10px;
+}
+
+.table {
+    background-color: #2C3E50 !important;
+    color: #ECF0F1 !important;
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-left: 2px solid #FFFFFF !important; 
+    border-right: 2px solid #FFFFFF !important; 
+}
+
+.table thead {
+    background-color: #154360 !important;
+    color: #ECF0F1 !important;
+}
+
+.table td, .table th {
+    background-color: #2C3E50 !important;
+    color: #ECF0F1 !important;
+    border: none !important;
+    padding: 12px;
+}
+
+a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: #1F618D !important;
+    border-color: #1F618D !important;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #ECF0F1 !important;
+    border-color: #ECF0F1 !important;
+    color: #1B2631 !important;
+}
+
+.card {
+    background-color: #2C3E50 !important;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2) !important;
+    border: none;
+    margin-bottom: 20px;
+    color: #ECF0F1 !important;
+}
+
+.card-header {
+    background-color: #154360 !important;
+    color: #ECF0F1 !important;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+input, textarea {
+    background-color: #1B2631 !important;
+    border: 1px solid #1F618D !important;
+    color: #ECF0F1 !important;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #2980B9 !important;
+    box-shadow: 0px 0px 8px rgba(41, 128, 185, 0.5) !important;
+}
+
+.box {
+    background-color: #2C3E50 !important;
+    color: #ECF0F1 !important;
+    border-radius: 12px;
+    padding-top: 10px;
+}
+
+.list-group-item {
+    background-color: #2C3E50 !important;
+    color: #ECF0F1 !important;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #1B2631 !important;
+    color: #ECF0F1 !important;
+}
+
+.card-body p,
+.table td,
+.table th {
+    background-color: #2C3E50 !important;
+    color: #ECF0F1 !important;
+    padding-left: 10px;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: none !important;
+}
+
+.table th, .table td {
+    border-right: 2px solid #FFFFFF !important;
+}
+
+.table th:last-child, .table td:last-child {
+    border-right: none !important;
+}
+
+footer {
+    background-color: #154360 !important;
+    color: #ECF0F1 !important;
+    padding: 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+footer a {
+    color: #ECF0F1 !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #1F618D !important;
+}
