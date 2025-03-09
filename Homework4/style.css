@@ -1,5 +1,4 @@
 :root {
-    /* Light Mode Renkleri */
     --bg-color-light: #ffffff;
     --text-color-light: #333333;
     --input-bg-color-light: #f8f9fa;
@@ -11,7 +10,6 @@
     --placeholder-color-light: #666;
     --focus-border-light: black;
 
-    /* Dark Mode Renkleri */
     --bg-color-dark: #121212;
     --text-color-dark: #f8f9fa;
     --input-bg-color-dark: #2d2d2d;
@@ -24,7 +22,6 @@
     --focus-border-dark: white;
 }
 
-/* Genel Stil */
 body {
     background-color: var(--bg-color-light);
     color: var(--text-color-light);
@@ -36,7 +33,6 @@ body.dark-mode {
     color: var(--text-color-dark);
 }
 
-/* Tema Butonu */
 #themeToggle {
     position: absolute;
     top: 10px;
@@ -55,7 +51,6 @@ body.dark-mode #themeToggle {
     color: var(--button-text-color-dark);
 }
 
-/* Genel Buton Stili (Sil hariç) */
 button:not(.delete-btn) {
     background-color: var(--button-bg-color-light);
     color: var(--button-text-color-light);
@@ -90,14 +85,14 @@ body.dark-mode button:not(.delete-btn):hover {
     margin-bottom: 5px;
     border-radius: 4px;
     background-color: var(--list-item-bg-light);
-    color: var(--text-color-light); /* Metin rengini düzelttik */
+    color: var(--text-color-light); 
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 body.dark-mode .list-group-item {
     background-color: var(--list-item-bg-dark);
     border-color: var(--input-border-color-dark);
-    color: var(--text-color-dark); /* Dark modda metin rengi doğru */
+    color: var(--text-color-dark); 
 }
 
 .list-group-item.completed {
@@ -132,12 +127,12 @@ body.dark-mode #taskInput {
 
 /* Placeholder Rengi */
 #taskInput::placeholder {
-    color: var(--placeholder-color-light); /* Light mod için placeholder */
+    color: var(--placeholder-color-light);
     transition: color 0.3s ease;
 }
 
 body.dark-mode #taskInput::placeholder {
-    color: var(--placeholder-color-dark); /* Dark mod için placeholder */
+    color: var(--placeholder-color-dark); 
 }
 
 /* Focus Durumu */

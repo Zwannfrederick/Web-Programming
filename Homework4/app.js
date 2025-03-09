@@ -8,14 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadTasks();
 
-    // Tema durumunu kontrol et (localStorage'dan)
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     if (isDarkMode) {
         body.classList.add('dark-mode');
         themeToggle.textContent = 'Light Mode';
     }
-
-    // Tema değiştirme butonuna tıklanınca
+    
     themeToggle.addEventListener('click', function () {
         body.classList.toggle('dark-mode');
         const isDarkMode = body.classList.contains('dark-mode');
