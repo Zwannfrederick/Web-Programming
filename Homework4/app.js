@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const deleteBtn = document.createElement('button');
         deleteBtn.innerText = "Sil";
-        deleteBtn.className = 'btn btn-danger btn-sm';
+        deleteBtn.className = 'btn delete-btn';  
         deleteBtn.addEventListener('click', function () {
             taskList.removeChild(li);
             saveTasks();
