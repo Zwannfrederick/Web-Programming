@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Listesi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        h2, h3 {
+            color: #007bff;
+        }
+        .list-group-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .list-group-item:hover {
+            background-color: #f1f1f1;
+        }
+        #cart {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
+            padding: 15px;
+        }
+        #cart p {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .btn {
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Ürünler</h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Kitap - 50₺ 
+                        <button class="btn btn-primary" onclick="addToCart('Kitap')">Sepete Ekle</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Telefon - 5000₺ 
+                        <button class="btn btn-primary" onclick="addToCart('Telefon')">Sepete Ekle</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Kalem - 10₺ 
+                        <button class="btn btn-primary" onclick="addToCart('Kalem')">Sepete Ekle</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Defter - 30₺ 
+                        <button class="btn btn-primary" onclick="addToCart('Defter')">Sepete Ekle</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Sepet</h3>
+                <div id="cart" class="border p-3">
+                    <!-- Sepet buraya AJAX ile yüklenecek -->
+                    <p>Sepetiniz boş.</p>
+                </div>
+                <button class="btn btn-danger mt-3" onclick="clearCart()">Sepeti Temizle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS ve bağımlılıkları -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function addToCart(product) {
+            $.post("AddToCartServlet", { product: product }, function(response) {
+                // JSON cevabını alıyoruz
+                var cart = response;
+                updateCartHTML(cart);  // Sepeti güncelliyoruz
+            });
+        }
+
+        function updateCartHTML(cart) {
+            var cartHtml = "<ul>";
+            for (var item in cart) {
+                cartHtml += "<li>" + item + " - " + cart[item] + " adet</li>";
+            }
+            cartHtml += "</ul>";
+            $("#cart").html(cartHtml);
+        }
+
+        function loadCart() {
+            $.get("CartServlet", function(response) {
+                if (response.message) {
+                    $("#cart").html("<p>" + response.message + "</p>");
+                } else {
+                    let cartHtml = "<ul>";
+                    Object.keys(response).forEach(item => {
+                        cartHtml += "<li>" + item + " - " + response[item] + " adet</li>";
+                    });
+                    cartHtml += "</ul>";
+                    $("#cart").html(cartHtml);
+                }
+            }, "json"); // JSON olarak işle
+        }
+
+        function clearCart() {
+            $.post("ClearCartServlet", function(response) {
+                $("#cart").html("<p>" + response.message + "</p>");
+            }, "json");
+        }
+
+
+        $(document).ready(function() {
+            loadCart(); // Sayfa açıldığında sepeti yükle
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Hava Durumu Uygulaması</h1>
+    <input type="text" id="cityInput" placeholder="Şehir adı girin...">
+    <button id="getWeatherBtn">Hava Durumunu Getir</button>
+    <button id="getLocationBtn">Konumumla Hava Durumu</button>
+    
+    <div id="weatherInfo"></div>
+    
+    <div id="recentCities">
+        <h2>Son Sorgulanan Şehirler:</h2>
+    </div>
+
+    <button id="clearCitiesBtn">Son Sorgulanan Şehirleri Temizle</button>
+  </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

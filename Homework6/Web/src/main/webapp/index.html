@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üye Kayıt Formu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Üye Kayıt Formu</h2>
+        <form action="register" method="post" onsubmit="return validateForm()">
+            <input type="text" name="firstName" id="firstName" placeholder="Ad" required>
+            <input type="text" name="lastName" id="lastName" placeholder="Soyad" required>
+            
+            <select name="city" required>
+                <option value="" disabled selected>Yaşadığınız Şehir</option>
+                <option value="İstanbul">İstanbul</option>
+                <option value="Ankara">Ankara</option>
+                <option value="İzmir">İzmir</option>
+                <option value="Bursa">Bursa</option>
+                <option value="Adana">Adana</option>
+            </select>
+
+            <input type="email" name="email" placeholder="Eposta Adresi" required>
+            
+            <input type="password" id="password" name="password" placeholder="Şifre" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Şifre Tekrar" required>
+            
+            <p class="error" id="error-msg">Şifreler uyuşmuyor!</p>
+
+            <label for="show-password" class="show-password">
+                <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+            </label>
+
+            <input type="submit" value="Kayıt Ol">
+        </form>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+</html>
